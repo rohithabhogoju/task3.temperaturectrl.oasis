@@ -1,0 +1,21 @@
+<head>
+
+</head>
+
+<body>
+    <div class="temperature-converter">
+        <h1>Temperature Converter</h1>
+        <select id="conversionType" name="conversionType">
+            <option value="celsiusToFahrenheit">Celsius to Fahrenheit</option>
+            <option value="fahrenheitToCelsius">Fahrenheit to Celsius</option>
+            <option value="kelvinToRankine">Kelvin to Rankine</option>
+            <option value="rankineToKelvin">Rankine to Kelvin</option>
+        </select>
+        <input type="number" id="inputTemperature" placeholder="Enter temperature">
+        <button id="convertionButton">Convert</button>
+        <p id="text"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

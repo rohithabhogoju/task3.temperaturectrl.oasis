@@ -1,0 +1,29 @@
+let convertButton = document.getElementById("convertionButton");
+let inputTemperature = document.getElementById("inputTemperature");
+let result = document.getElementById("text");
+let conversionType = document.getElementById("conversionType");
+
+convertButton.addEventListener("click", () => {
+    let selectedConversion = conversionType.value;
+    let temperature = parseFloat(inputTemperature.value);
+
+    if (isNaN(temperature)) {
+        result.textContent = "Please enter a valid temperature.";
+        return;
+    }
+    let convertedTemperature = 0;
+
+    if (selectedConversion === "celsiusToFahrenheit") {
+        convertedTemperature = (temperature * 9 / 5) + 32;
+        result.textContent = `${temperature}°C is ${convertedTemperature.toFixed(2)}°F`;
+    } else if (selectedConversion === "fahrenheitToCelsius") {
+        convertedTemperature = (temperature - 32) * 5 / 9;
+        result.textContent = `${temperature}°F is ${convertedTemperature.toFixed(2)}°C`;
+    } else if (selectedConversion === "kelvinToRankine") {
+        convertedTemperature = temperature * 1.8;
+        result.textContent = `${temperature} K is ${convertedTemperature.toFixed(2)}°R`;
+    } else if (selectedConversion === "rankineToKelvin") {
+        convertedTemperature = temperature / 1.8;
+        result.textContent = `${temperature}°R is ${convertedTemperature.toFixed(2)} K`;
+    }
+});
